@@ -1,0 +1,20 @@
+name: Workflow to build Dockerfile
+on:
+  pull_request:
+    branches:
+    - main
+
+jobs:
+  build:
+    name: Run dockerfile
+    runs-on: ubuntu-latest
+    steps:
+    - name: Build and push Docker images
+      uses: docker/build-push-action@v6.18.0
+      with:
+        build-args: name="Srishti"
+        file: "../../greet.Dockerfile"
+        
+      
+      
+    
